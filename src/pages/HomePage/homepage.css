@@ -1,0 +1,23 @@
+.homepage{
+    margin: 5% 2%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.mymeeting, .buildings, .rooms, .allmeetings{
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 10px 30px;
+}
+
+.heading{
+    text-align: center;
+}
+
+.scheduleButton{
+    grid-column-start: 1;
+    grid-column-end: 5;
+    text-align: center;
+}

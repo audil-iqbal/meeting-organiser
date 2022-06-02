@@ -1,0 +1,32 @@
+.navbar{
+    width: 100vw;
+    background-color: #0073bf;
+    position: fixed;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.floatright{
+    float: right !important;
+}
+
+.navbar li{
+    display: block;
+    text-align: center;
+    float: left;
+}
+
+li a{
+    text-decoration: none;
+    color: white;
+}
+.navItem{
+    padding: 14px 10px;
+}
+
+.user{
+    /* float: right; */
+}

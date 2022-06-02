@@ -1,0 +1,20 @@
+.meetingRoom{
+    border: 1px solid #0073bf;
+    border-radius: 10px;
+    padding: 1%;
+    margin: 1%;
+    width: auto;
+    display: inline-block;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+}
+.meetingRoom:hover{
+    background-color: grey;
+    cursor: pointer;
+}
+input[type]:checked{
+    background-color: #0073bf;
+}
+.roomContent{
+    text-align: center;
+}

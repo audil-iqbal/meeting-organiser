@@ -1,0 +1,7 @@
+.findRoom{
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 1% 2%;
+    height: 50vh;
+    overflow-y: scroll;
+}
