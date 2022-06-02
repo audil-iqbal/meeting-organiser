@@ -8,12 +8,12 @@ import { setMeetingDateTime } from "../../redux/AddMeeting/addMeeting.actions";
 
 const  MeetingDetails = ({setFindRoomComponent,setMeetingDateTime}) => {
 
-    //TODO: handle UTC timing for global usage
+    
     /*
     TODO: form validation like
         1. end time greater than start time
-        2. non empty fields while finding available rooms
-        3. date and time formatting
+        2. date and time formatting
+    TODO: handle UTC timing for global usage
     */
     const getAllBuildingQuery = gql(GET_ALL_BUILDINGS_QUERY);
     const {data, loading, err} = useQuery(getAllBuildingQuery);
@@ -24,6 +24,7 @@ const  MeetingDetails = ({setFindRoomComponent,setMeetingDateTime}) => {
     const [meetingBuilding, setBuilding] = useState();
     const [meetingTitle, setTitte] = useState();
     
+    //handler for data validation and fetching rooms
     const findAvailableRooms = (event) => {
         event.preventDefault();
 
@@ -43,12 +44,19 @@ const  MeetingDetails = ({setFindRoomComponent,setMeetingDateTime}) => {
         });
     }
 
+    //handler for select tag for buildings data
     const selectBuilding = (event) => {
         const selectedOption = event.target.options[event.target.selectedIndex];
         setBuilding({
             'name':selectedOption.value,
             'id':selectedOption.id
         });
+    }
+
+    //handle data fetching error
+    if(err){
+        alert('something went wrong');
+        console.log('error: ',err);
     }
 
     return(
@@ -91,7 +99,6 @@ const  MeetingDetails = ({setFindRoomComponent,setMeetingDateTime}) => {
                     </tr>
                 </table>
             </form>
-
         </div>
     );
 }

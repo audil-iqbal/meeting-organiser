@@ -8,6 +8,10 @@ const AllMeetingInfo = () => {
     const getAllMeetingsQuery = gql(GET_ALL_MEETINGS_QUERY);
     const {data, loading, error} = useQuery(getAllMeetingsQuery);
 
+    if(error){
+        alert("something went wrong");
+        console.log("error:",error);
+    }
     return(
         <div className="allmeetings">
             <div className="heading">Meetings Info</div>

@@ -8,6 +8,11 @@ const MeetingRoomInfo = () => {
     const getAllMeetingRoomQuery = gql(GET_ALL_MEETING_ROOMS_QUERY);
     const {data, loading, error} = useQuery(getAllMeetingRoomQuery);
     
+    //handle query fetching error
+    if(error){
+        alert('something went wrong');
+        console.log('error:', error);
+    }
     return (
         <div className="rooms">
             <div className="heading">Meeting Rooms Info</div>

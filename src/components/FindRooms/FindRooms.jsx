@@ -7,13 +7,14 @@ import SelectMeetingRoom from "../SelectMeetingRoom/SelectMeetingRoom";
 import './findRoom.css';
 
 const FindRooms = ({building,showSaveButton,meetingData}) => {
-
+    
     const getAvailableRooms = gql(GET_AVAILABLE_ROOMS);
     const {data, loading, err} = useQuery(getAvailableRooms);
     
     const setMeetingQuery = gql(SET_MEETING_QUERY);
     const [saveMeeting,{save_data,save_load,save_err}] = useMutation(setMeetingQuery);
 
+    //handler for save meeting button
     const saveMeetingIntoDb = () => {
         saveMeeting({variables:{
             id: meetingData.id,
@@ -27,9 +28,17 @@ const FindRooms = ({building,showSaveButton,meetingData}) => {
         .catch(err => console.log('errorrr1: ',err));
     }
 
+    //handle mutation query success 
     if(save_data!=null){
         prompt('Meeting Added successfully');
     }
+
+    //handle data fetching error
+    if(err){
+        alert('something went wrong');
+        console.log('error:',err);
+    }
+
     return(
         <div className="findRoom">
             <div>Select Meeting Room</div>

@@ -7,6 +7,10 @@ const BuildingInfo = () => {
     const getAllBuildinguery = gql(GET_ALL_BUILDINGS_QUERY);
     const {data,loading, error} = useQuery(getAllBuildinguery);
 
+    if(error){
+        alert('something went worong');
+        console.log('error: ',error);
+    }
     return(
         <div className="buildings">
             <div className="heading">Building Info</div>
