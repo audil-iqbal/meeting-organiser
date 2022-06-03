@@ -1,13 +1,13 @@
 # meeting-organiser
 
-##Requirements
+## Requirements
 
 1. Home page should show info about Building, Meeting, Meeting Room
-2. Schdele Meeting page to take meeting detail inputs/
-    i. meeting title
-    ii. meeting date 
-    iii. meeting time
-    iv. meeting buildings
+2. Schdele Meeting page to take meeting detail inputs\
+    i. meeting title\
+    ii. meeting date\
+    iii. meeting time\
+    iv. meeting building
 3. System should fetch available rooms in that building.
 4. After selecting a room meeting and user confirms the meeting by clicking save.
 
