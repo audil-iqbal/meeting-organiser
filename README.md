@@ -11,6 +11,12 @@
 3. System should fetch available rooms in that building.
 4. After selecting a room meeting and user confirms the meeting by clicking save.
 5. (Implemented) Integrated CICD using Github Actions and Heroku
+6. (Intended) Admin workflow to add/modify buildings, meeting rooms
+7. (Intended) Upon login add/modfiy own meeting for individual users
+8. (Intended) Invite users to the meeting
+9. (Intended) Notifications for upcoming/cancelled meetings, error handling/concurrency use cases
+10. (Intended) Media queries for cross platforms- mobile, tablet, desktop
+11. (Intended) Time zone support for cross geo locations
 
 ## Component Design
 ![Building info](/component-design/buildings.png)
