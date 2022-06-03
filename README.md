@@ -10,6 +10,7 @@
     iv. meeting building
 3. System should fetch available rooms in that building.
 4. After selecting a room meeting and user confirms the meeting by clicking save.
+5. (Implemented) Integrated CICD using Github Actions and Heroku
 
 ## Component Design
 ![Building info](/component-design/buildings.png)
