@@ -15,8 +15,9 @@
 7. (Intended) Upon login add/modfiy own meeting for individual users
 8. (Intended) Invite users to the meeting
 9. (Intended) Notifications for upcoming/cancelled meetings, error handling/concurrency use cases
-10. (Intended) Media queries for cross platforms- mobile, tablet, desktop
-11. (Intended) Time zone support for cross geo locations
+10. (Intended) Sending calendar invites for meeting schedules
+11. (Intended) Media queries for cross platforms- mobile, tablet, desktop
+12. (Intended) Time zone support for cross geo locations
 
 ## Component Design
 ![Building info](/component-design/buildings.png)
