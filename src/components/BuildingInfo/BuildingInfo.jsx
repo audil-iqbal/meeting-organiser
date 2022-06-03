@@ -8,7 +8,7 @@ const BuildingInfo = () => {
     const {data,loading, error} = useQuery(getAllBuildinguery);
 
     if(error){
-        alert('something went worong');
+        alert('something went wrong');
         console.log('error: ',error);
     }
     return(

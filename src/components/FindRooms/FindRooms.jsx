@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import Loader from '../../components/Loader/Loader.svg';
 import { GET_AVAILABLE_ROOMS, SET_MEETING_QUERY } from "../../constants/query";
 import SelectMeetingRoom from "../SelectMeetingRoom/SelectMeetingRoom";
+import Button from "../UserInputs/Button";
 import './findRoom.css';
 
 const FindRooms = ({building,showSaveButton,meetingData}) => {
@@ -44,9 +45,11 @@ const FindRooms = ({building,showSaveButton,meetingData}) => {
             <div>Select Meeting Room</div>
             {loading ? <img src={Loader} alt='loader'/> : <></>}
             <div id='meetingRooms'>
+                {data?.MeetingRooms?.filter(e => e.building.name === building.name).length ==0 ? <div>No Meeting Rooms Available</div>:<></>}
                 {data?.MeetingRooms?.filter(e => e.building.name === building.name).map((e,idx) => <SelectMeetingRoom key={idx} room={e}/>)}
             </div>
-            <button disabled={!showSaveButton} onClick={saveMeetingIntoDb}>Save Meeting</button>
+            <Button disabled={!showSaveButton} onClick={saveMeetingIntoDb} text='Save Meeting'/>
+            {/* <button disabled={!showSaveButton} onClick={saveMeetingIntoDb}>Save Meeting</button> */}
         </div>
     );
 }

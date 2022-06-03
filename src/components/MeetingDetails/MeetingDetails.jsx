@@ -5,6 +5,10 @@ import Loader from '../../components/Loader/Loader.svg';
 import { connect } from "react-redux";
 import { setFindRoomComponent } from "../../redux/SchudulePage/schedulePage.actions";
 import { setMeetingDateTime } from "../../redux/AddMeeting/addMeeting.actions";
+import TextInput from "../UserInputs/TextInput";
+import DateInput from "../UserInputs/DateInput";
+import TimeInput from "../UserInputs/TimeInput";
+import Button from "../UserInputs/Button";
 
 const  MeetingDetails = ({setFindRoomComponent,setMeetingDateTime}) => {
 
@@ -68,19 +72,23 @@ const  MeetingDetails = ({setFindRoomComponent,setMeetingDateTime}) => {
                     </tr>
                     <tr>
                         <td><label htmlFor="meetingTitle" >Select Title</label></td>
-                        <td><input type="text" id='meetingTitle' placeholder="Meeting Title" onChange={e=> setTitte(e.target.value)} required/></td>
+                        <td><TextInput id='meetingTitle' placeholder='Meeting Title' handleChange={(e)=> setTitte(e.target.value)} required/></td>
+                        {/* <td><input type="text" id='meetingTitle' placeholder="Meeting Title" onChange={e=> setTitte(e.target.value)} required/></td> */}
                     </tr>
                     <tr>
                         <td><label htmlFor="meetingDate" >Select Date</label></td>
-                        <td><input type="date" id='meetingDate' onChange={e=> setMeetingDate(e.target.value)} required/></td>
+                        <td><DateInput id='meetingDate' handleChange={e=>setMeetingDate(e.target.value)} required/></td>
+                        {/* <td><input type="date" id='meetingDate' onChange={e=> setMeetingDate(e.target.value)} required/></td> */}
                     </tr>
                     <tr>
                         <td><label htmlFor="meetingStartTime">Select Start Time</label></td>
-                        <td><input type="time" id='meetingStartTime' onChange={e=> setStartTime(e.target.value)} required/></td>
+                        <td><TimeInput id='meetingStartTime' handleChange={e=>setStartTime(e.target.value)} required/></td>
+                        {/* <td><input type="time" id='meetingStartTime' onChange={e=> setStartTime(e.target.value)} required/></td> */}
                     </tr>
                     <tr>
                         <td><label htmlFor="meetingEndTime">Select End Time</label></td>
-                        <td><input type="time" id='meetingEndTime' onChange={e=> setEndTime(e.target.value)} required/></td>
+                        <td><TimeInput id='meetingEndTime' handleChange={e=> setEndTime(e.target.value)} required/></td>
+                        {/* <td><input type="time" id='meetingEndTime' onChange={e=> setEndTime(e.target.value)} required/></td> */}
                     </tr>
                     {
                         loading ? <img src={Loader} alt='loader'/> :
@@ -95,7 +103,10 @@ const  MeetingDetails = ({setFindRoomComponent,setMeetingDateTime}) => {
                         </tr>
                     }
                     <tr>
-                        <td colSpan="2"><button type='submit'>Find Available Rooms</button></td>
+                        <td colSpan="2">
+                            <Button type='submit' text='Find Available Room'/>
+                            {/* <button type='submit'>Find Available Rooms</button> */}
+                        </td>
                     </tr>
                 </table>
             </form>
